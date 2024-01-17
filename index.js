@@ -7,11 +7,16 @@ require("dotenv").config();
 const app = express();
 
 // This will allow us to use JSON when we sending something from the Front-end to the Back-end without POST Request
-app.use(express.json());
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // const API_KEY = process.env.API_KEY;
 const API_KEY = "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";
+
+app.get("/", (req, res) => {
+  res.send("This is a stack overflow clone API");
+});
 
 app.post("/completions", async (req, res) => {
   const options = {
