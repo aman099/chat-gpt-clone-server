@@ -15,7 +15,7 @@ app.use(cors());
 const API_KEY = "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";
 
 app.get("/", (req, res) => {
-  res.send("This is a stack overflow clone API");
+  res.send("This is a ChatGPT clone API");
 });
 
 app.post("/completions", async (req, res) => {
