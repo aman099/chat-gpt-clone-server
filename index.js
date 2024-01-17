@@ -12,7 +12,6 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 const API_KEY = process.env.API_KEY;
-// const API_KEY = "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";
 
 app.get("/", (req, res) => {
   res.send("This is a ChatGPT clone API");
